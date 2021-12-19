@@ -49,7 +49,10 @@ export default function Stocks() {
       clearTimeout(id);
     }
     id = setTimeout(() => {
-      setQuery(e.target.value);
+      let q = e.target.value;
+      //this toUpperCase gives flexibility to users for searching by lower case char also.
+      q = q.toUpperCase();
+      setQuery(q);
 
       searchRelatedResults(query);
     }, 100);
